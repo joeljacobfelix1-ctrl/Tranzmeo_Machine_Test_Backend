@@ -1,0 +1,70 @@
+{
+  "name": "backend",
+  "description": "This is the backend for the test application by Joel Jacob Felix",
+  "version": "0.0.0",
+  "homepage": "",
+  "private": true,
+  "keywords": [
+    "feathers"
+  ],
+  "author": {},
+  "contributors": [],
+  "bugs": {},
+  "engines": {
+    "node": ">= 22.18.0"
+  },
+  "feathers": {
+    "language": "js",
+    "packager": "npm",
+    "database": "postgresql",
+    "framework": "express",
+    "transports": [
+      "rest",
+      "websockets"
+    ],
+    "schema": "json"
+  },
+  "directories": {
+    "lib": "src",
+    "test": "test"
+  },
+  "main": "lib/index",
+  "type": "module",
+  "scripts": {
+    "start": "node src",
+    "dev": "nodemon src/",
+    "prettier": "npx prettier \"**/*.js\" --write",
+    "mocha": "cross-env NODE_ENV=test mocha test/ --recursive --exit",
+    "test": "cross-env NODE_ENV=test npm run migrate && npm run mocha",
+    "bundle:client": "npm pack --pack-destination ./public",
+    "migrate": "knex migrate:latest",
+    "migrate:make": "knex migrate:make -x mjs",
+    "seed":"knex seed:run"
+  },
+  "dependencies": {
+    "@feathersjs/adapter-commons": "^5.0.34",
+    "@feathersjs/authentication": "^5.0.34",
+    "@feathersjs/authentication-client": "^5.0.34",
+    "@feathersjs/configuration": "^5.0.34",
+    "@feathersjs/errors": "^5.0.34",
+    "@feathersjs/express": "^5.0.34",
+    "@feathersjs/feathers": "^5.0.34",
+    "@feathersjs/knex": "^5.0.34",
+    "@feathersjs/schema": "^5.0.34",
+    "@feathersjs/socketio": "^5.0.34",
+    "@feathersjs/transport-commons": "^5.0.34",
+    "compression": "^1.8.1",
+    "knex": "^3.1.0",
+    "pg": "^8.15.6",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "@feathersjs/cli": "^5.0.34",
+    "@feathersjs/rest-client": "^5.0.34",
+    "axios": "^1.9.0",
+    "cross-env": "^10.0.0",
+    "mocha": "^11.2.2",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.6.2"
+  }
+}
