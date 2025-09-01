@@ -41,7 +41,7 @@ Make sure you have installed:
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/your-username/user-management-backend.git
+git clone https://github.com/joeljacobfelix1-ctrl/Tranzmeo_Machine_Test_Backend.git
 cd user-management-backend
 
 
